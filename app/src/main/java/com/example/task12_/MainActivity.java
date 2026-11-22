@@ -58,5 +58,22 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
             }
         });
 
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blueScore = 0;
+                redScore = 0;
+                resultsLayout.setVisibility(View.GONE);
+                gameLayout.setVisibility(View.VISIBLE);
+            }
+        });
+    }
 
+    @Override
+    public boolean onLongClick(View v) {
+        if (v.getId() == R.id.btnRed) {
+            redScore = redScore + 2;
+        }
+        return true;
+    }
 }
